@@ -5,15 +5,15 @@
 @section('content')
     <div class="box box_register shadow">
 
-      <div class="header">
-        <a href="{{ url('/') }}">
-          <img src="{{ url('static/images/logo.png') }}" alt="">
-        </a>
-      </div>
+        <div class="header">
+            <a href="{{ url('/') }}">
+                <img src="{{ url('static/images/logo.png') }}" alt="">
+            </a>
+        </div>
 
-    
+
         <div class="inside">
-          
+
             {!! Form::open(['url' => '/register']) !!}
 
             <label for="name">Nombre:</label>
@@ -59,11 +59,35 @@
             {!! Form::submit('Registrarse', ['class' => 'btn btn-success mtop16']) !!}
             {!! Form::close() !!}
 
+            {{-- Mostramos mensajes de Error --}}
+            @if (Session::has('message'))
+                <div class="container">
+                    <div class="mtop16 alert alert-{{ Session::get('typealert') }}" style="display:none;">
+                        {{ Session::get('message') }}
+
+                        @if ($errors->any)
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
+
+                        <script>
+                            $('.alert').slideDown();
+                            setTimeout(function() {
+                                $('.alert').slideUp();
+                            }, 10000);
+                        </script>
+                    </div>
+                </div>
+            @endif
+
             <div class="footer mtop16">
                 <a href="{{ url('/login') }}"> Ingresar</a>
             </div>
 
-            
+
 
         </div>
 

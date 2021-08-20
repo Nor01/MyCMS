@@ -17,10 +17,10 @@ Route::get('/', function () {
 
 // Mis Routes
 
-//Formularios de Login y Registro
+//Get formularios de Login y Registro
 Route::get('/login', 'ConnectController@getLogin')->name('login');
 Route::get('/register', 'ConnectController@getRegister')->name('register');
 
-//Enviar Formulario de Login y Registro
+//Post formularios de Login y Registro
 Route::post('/register', 'ConnectController@postRegister')->name('register');
 

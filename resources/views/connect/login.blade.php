@@ -34,10 +34,33 @@
             {!! Form::submit('Ingresar', ['class' => 'btn btn-success mtop16']) !!}
             {!! Form::close() !!}
 
+            {{-- Mostramos mensajes de Error --}}
+            @if (Session::has('message'))
+                <div class="container">
+                    <div class="mtop16 alert alert-{{ Session::get('typealert') }}" style="display:none;">
+                        {{ Session::get('message') }}
+
+                        @if ($errors->any)
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
+
+                        <script>
+                            $('.alert').slideDown();
+                            setTimeout(function() {
+                                $('.alert').slideUp();
+                            }, 10000);
+                        </script>
+                    </div>
+                </div>
+            @endif
 
             <div class="footer mtop16">
-              <a href="{{ url('/register') }}"> ¿No tienes cuenta? Registrarse</a>
-              <a href="{{ url('/recover') }}"> Recuperar Contraseña</a>
+                <a href="{{ url('/register') }}"> ¿No tienes cuenta? Registrarse</a>
+                <a href="{{ url('/recover') }}"> Recuperar Contraseña</a>
             </div>
 
         </div>
