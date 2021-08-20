@@ -1,0 +1,73 @@
+body {
+    margin: 0px;
+    background-color: #f6f6f6;
+    font-size: 14px;
+}
+
+.mtop16 {
+    margin-top: 16px;
+}
+
+
+/* Caja de Login */
+
+.box {
+    background-color: #fff;
+    border: 1px solid #d6d6d6;
+    width: 500px;
+    border-radius: 8px;
+    position: absolute;
+}
+
+.box .inside {
+    padding: 16px;
+}
+
+.box .btn-success {
+    width: 100%;
+    background-color: #589900;
+    border: 0px;
+}
+
+.box .header {
+    background-color: #f2f7fc;
+    padding: 16px;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.box .header a img {
+    width: 30%;
+    display: block;
+    margin: 0px auto;
+}
+
+.box .footer {
+    text-align: center;
+}
+
+.box .footer a {
+    display: inline-block;
+    font-size: .8em;
+}
+
+.footer a:last-child {
+    margin-left: 24px;
+}
+
+.box_login {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box_register {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-control:focus,
+.form-control:active {
+    outline: none;
+    box-shadow: none;
+}
