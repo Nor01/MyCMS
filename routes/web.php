@@ -23,4 +23,8 @@ Route::get('/register', 'ConnectController@getRegister')->name('register');
 
 //Post formularios de Login y Registro
 Route::post('/register', 'ConnectController@postRegister')->name('register');
+Route::post('/login', 'ConnectController@postLogin')->name('login');
+
+//Cerrar sesion de usuarios
+Route::get('/logout', 'ConnectController@getLogout')->name('logout');
 
